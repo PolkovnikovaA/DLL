@@ -1,4 +1,6 @@
 #include <Windows.h>
+#include <stdio.h>
+
 BOOL WINAPI DLLMain(HINSTANCE hlnstDll, DWORD dwReason, LPVOID IpReserved)
 {
 	BOOL bAllWentWell = TRUE;
@@ -18,7 +20,7 @@ BOOL WINAPI DLLMain(HINSTANCE hlnstDll, DWORD dwReason, LPVOID IpReserved)
 	else
 		return FALSE;
 }
-extern "C" __declspec(dllimport) int MyFunc(LPWSTR str);
+extern __declspec(dllimport) int MyFunc(LPWSTR str);
 
 int MyFunc(LPWSTR str)
 {
